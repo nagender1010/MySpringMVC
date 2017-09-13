@@ -17,7 +17,7 @@ public interface EmployeeService {
 
 	public List<Employee> getAllEmployeesByDeptId(int deptId);
 
-	public int addEmployee(Employee emp);
+	public Employee addEmployee(Employee emp);
 
 	public Employee updateEmployee(Employee emp);
 

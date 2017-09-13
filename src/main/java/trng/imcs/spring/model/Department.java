@@ -1,7 +1,13 @@
 package trng.imcs.spring.model;
 
-public class Department {
+import java.io.Serializable;
 
+public class Department implements Serializable{
+
+	/**
+	 * @author Nagender
+	 */
+	private static final long serialVersionUID = -1108664496960894731L;
 	private int id;
 	private String name;
 

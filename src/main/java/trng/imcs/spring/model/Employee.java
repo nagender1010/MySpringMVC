@@ -1,12 +1,17 @@
 package trng.imcs.spring.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
 
-public class Employee {
+public class Employee implements Serializable {
 
+	/**
+	 * @author Nagender
+	 */
+	private static final long serialVersionUID = -4763018183513520076L;
 	private Integer id;
 	private String name;
 	private String username;

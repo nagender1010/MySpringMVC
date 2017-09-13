@@ -134,12 +134,11 @@ public class EmployeeController {
 		employee.setId(0);
 		logger.debug("defaultPage method called");
 		System.out.println("entered into addEmployee method " + employee);
-		int empId = employeeService.addEmployee(employee);
+		Employee emp = employeeService.addEmployee(employee);
 		
 		ModelAndView modelAndView = new ModelAndView("employee");
-		modelAndView.addObject("msg", "User ID " + empId + " added successfully");
-		employee.setId(empId);
-		modelAndView.addObject("eInfo", employee);
+		modelAndView.addObject("msg", "User ID " + emp.getId() + " added successfully");
+		modelAndView.addObject("eInfo", emp);
 		modelAndView.addObject("status", false);
 		return modelAndView;
 

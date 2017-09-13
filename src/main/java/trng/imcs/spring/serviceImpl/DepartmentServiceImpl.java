@@ -3,6 +3,7 @@ package trng.imcs.spring.serviceImpl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -23,6 +24,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 	private RestTemplate restTemplate;
 
 	@Override
+	@Cacheable(value="employees", key ="#deptId")
 	public Department getDepartment(int deptId) {
 		String entityUrl = URL + deptId;
 		ResponseEntity<Department> response = restTemplate.getForEntity(entityUrl, Department.class);
@@ -34,6 +36,7 @@ public class DepartmentServiceImpl implements DepartmentService {
 
 	@SuppressWarnings("unchecked")
 	@Override
+	@Cacheable(value = "employees")
 	public List<Department> getAllDepartments() {
 		return (List<Department>) restTemplate.getForObject(URL, Department.class);
 	}
