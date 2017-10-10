@@ -9,8 +9,8 @@ import org.springframework.core.io.ClassPathResource;
 
 @Configuration
 public class AppConfig {
-     //changes 22
-    @Bean
+
+	@Bean
     public CacheManager cacheManager() {
         //A EhCache based Cache manager
         return new EhCacheCacheManager(ehCacheCacheManager().getObject());
