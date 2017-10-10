@@ -9,7 +9,7 @@ import org.springframework.core.io.ClassPathResource;
 
 @Configuration
 public class AppConfig {
-     
+     //changes 22
     @Bean
     public CacheManager cacheManager() {
         //A EhCache based Cache manager
